@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const toDoItemSchema = new Schema({
+const toDoItemSchema = mongoose.Schema({
     description: {
         required: true,
         trim: true,
@@ -19,6 +18,4 @@ const toDoItemSchema = new Schema({
     timestamps: true
 });
 
-const ToDoItem = mongoose.model('ToDoItem', toDoItemSchema);
-
-module.exports = ToDoItem;
+module.exports = mongoose.model('ToDoItem', toDoItemSchema);
